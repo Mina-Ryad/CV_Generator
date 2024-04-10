@@ -1,0 +1,57 @@
+{
+    "name": "Add your full name here",
+    "personal_info": {
+        "Address": "Your Address",
+        "Phone": "Your Phone Number(s)",
+        "Email": "Your Email Address",
+        "LinkedIn": "[invalid URL removed]",
+        "Spoken Languages": "List your spoken languages and proficiency levels here",
+        "Marital Status": "Your Marital Status"
+    },
+    "summary": "Write your professional summary here. Briefly highlight your skills and experience.",
+    "experience": [
+        {
+            "title": "Job Title 1",
+            "company": "Company Name 1",
+            "location": "Location 1",
+            "dates": "Start Date 1 – End Date 1",
+            "description": "Write a description of your responsibilities and achievements in position 1."
+        },
+        {
+            "title": "Job Title 2",
+            "company": "Company Name 2",
+            "location": "Location 2",
+            "dates": "Start Date 2 – End Date 2",
+            "description": "Write a description of your responsibilities and achievements in position 2 (and so on for additional experiences)."
+        }
+    ],
+    "education": [
+        {
+            "degree": "Your Degree Name 1",
+            "school": "School Name 1",
+            "dates": "Graduation Year 1"
+        },
+        {
+            "degree": "Your Degree Name 2",
+            "school": "School Name 2",
+            "dates": "Graduation Year 2 (and so on for additional qualifications)"
+        }
+    ],
+    "courses": [
+        "Course Title 1, Provider Name 1 (Completion Dates)",
+        "Course Title 2, Provider Name 2 (Completion Dates) (and so on for additional courses)"
+    ],
+    "technical_skills": [
+        "Technical Skill 1 - Proficiency Level",
+        "Technical Skill 2 - Proficiency Level (and so on for your technical skills)",
+        "Add or remove skills based on your experience."
+    ],
+    "projects": [
+        "Project Name 1 - Brief Description (Technologies Used)",
+        "Project Name 2 - Brief Description (Technologies Used) (and so on for your projects)"
+    ],
+    "hobbies": [
+        "Your Hobby 1",
+        "Your Hobby 2 (and so on for your hobbies)"
+    ]
+}
