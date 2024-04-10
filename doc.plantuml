@@ -1,0 +1,20 @@
+@startuml
+
+start
+
+:Read CV data from JSON file;
+if (Data read successfully?) then (yes)
+  :Generate DOCX document;
+  if (Document generation successful?) then (yes)
+    :Save document;
+    stop
+  else (no)
+    :Display error message;
+    stop
+  endif
+else (no)
+  :Display error message;
+  stop
+endif
+
+@enduml
