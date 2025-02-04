@@ -29,7 +29,7 @@ def add_contact_info(document, contact_info):
 def add_section(document, title, items):
     add_heading(document, title)
     for item in items:
-        p = document.add_paragraph(item)
+        p = document.add_paragraph(item, style='ListBullet')  # Removed manual bullet
         p.style.font.size = Pt(10)
         reduce_spacing(p)
 
@@ -44,7 +44,7 @@ def add_experience(document, experiences):
         
         # Add achievements as bullet points
         for detail in exp['achievements']:
-            d = document.add_paragraph(detail, style='ListBullet')
+            d = document.add_paragraph(detail, style='ListBullet')  # Removed manual bullet
             reduce_spacing(d)
 
 def reduce_spacing(paragraph, line_spacing_rule=WD_LINE_SPACING.EXACTLY, line_spacing=Pt(12), space_after=Pt(0), space_before=Pt(1)):
