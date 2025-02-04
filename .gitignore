@@ -1,4 +1,3 @@
 *.docx
 *.pdf
-cv_data.json
 jsonFormatter.py

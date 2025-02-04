@@ -1,0 +1,73 @@
+{
+    "name": "Mina Ryad",
+    "contact_info": {
+        "Address": "Cairo, Egypt",
+        "Phone": "+201501414343, +201114417099",
+        "Email": "mina.hany.kameel.ryad@gmail.com",
+        "LinkedIn": "https://www.linkedin.com/in/mina-hany-kameel/"
+    },
+    "summary": "Results-oriented C++ Software Engineer with extensive experience in embedded systems and automotive software engineering. Proven track record in delivering high-quality software components, with strong expertise in C++, AUTOSAR, and Agile methodologies.",
+    "experience": [
+        {
+            "title": "C++ Software Engineer",
+            "company": "Swift-Act LLC",
+            "dates": "July 2022 – Present",
+            "achievements": [
+                "Developed and tested VAL software components for Volkswagen Infotainment's connectivity ECU, improving system efficiency by 15%.",
+                "Executed software V-cycle deliverables across multiple platforms, ensuring compliance with Automotive SPICE standards.",
+                "Implemented Agile/Scrum methodologies, enhancing team productivity by 20%."
+            ]
+        },
+        {
+            "title": "Embedded Software Engineer",
+            "company": "Alfa Electronics",
+            "dates": "June 2022 – July 2022",
+            "achievements": [
+                "Enhanced system efficiency and reliability for the Queueing System Project, reducing processing time by 10%."
+            ]
+        },
+        {
+            "title": "Project Engineer",
+            "company": "FlowTex for HDD",
+            "dates": "March 2020 – September 2021",
+            "achievements": [
+                "Managed multiple HDD sites within government mega projects, ensuring on-time project delivery.",
+                "Led a successful soil freezing project at the metro tunnel, recognized as a major company achievement."
+            ]
+        },
+        {
+            "title": "Maintenance and Production Engineer",
+            "company": "El Nemsawy for Plastic Industry",
+            "dates": "July 2019 – February 2021",
+            "achievements": [
+                "Optimized production plans, increasing productivity across three lines by 12%.",
+                "Improved daily maintenance operations, enhancing equipment uptime and worker safety."
+            ]
+        }
+    ],
+    "education": [
+        "Bachelor’s Degree in Mechatronics and Robotics Engineering, Assiut University (2016)",
+        "C++ Nanodegree, Udacity (May 2022 – September 2022)",
+        "Embedded Systems Diploma, National Telecommunication Institute (Oct 2021 – Mar 2022)"
+    ],
+    "skills": [
+        "Proficient in C/C++ and Python for software development and automation.",
+        "Strong knowledge of socket communication, multithreading, and IPC.",
+        "Experience with Google Protocol Buffers, Git, and real-time operating systems.",
+        "Familiar with AUTOSAR architecture, data structures, and algorithms."
+    ],
+    "certifications": [
+        "AUTOSAR Master Class (May 2022 – Oct 2022)",
+        "Mastering C++ 17 Critical Skills (May 2022 – Sep 2022)",
+        "AI and Data Science Introduction (Aug 2020 – Jan 2021)"
+    ],
+    "projects": [
+        "System Monitor Project - Udacity C++ Nanodegree",
+        "IOT Smart Home Project - ARM Cortex M4",
+        "CNC Machine (Graduation Project) – Grade: A+"
+    ],
+    "interests": [
+        "Volunteering as a Scout Leader, fostering leadership and teamwork.",
+        "Passionate about historical documentaries and technological advancements."
+    ]
+}
