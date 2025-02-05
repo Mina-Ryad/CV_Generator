@@ -1,73 +1,92 @@
 {
     "name": "Mina Ryad",
-    "contact_info": {
+    "personal_info": {
         "Address": "Cairo, Egypt",
         "Phone": "+201501414343, +201114417099",
         "Email": "mina.hany.kameel.ryad@gmail.com",
-        "LinkedIn": "https://www.linkedin.com/in/mina-hany-kameel/"
+        "LinkedIn": "https://www.linkedin.com/in/mina-hany-kameel/",
+        "Spoken Languages": "Arabic (native), English (full proficiency), German (basic)",
+        "Marital Status": "Single",
+        "Nationality": "Egyptian"
     },
-    "summary": "Results-oriented C++ Software Engineer with extensive experience in embedded systems and automotive software engineering. Proven track record in delivering high-quality software components, with strong expertise in C++, AUTOSAR, and Agile methodologies.",
+    "summary": "Results-oriented C++ Software Engineer with extensive experience in embedded systems and automotive software engineering. Skilled in designing, developing, and testing software components for advanced automotive infotainment systems. Recognized for achieving high customer satisfaction in 2023.",
     "experience": [
         {
             "title": "C++ Software Engineer",
             "company": "Swift-Act LLC",
+            "location": "Cairo, Egypt",
             "dates": "July 2022 – Present",
-            "achievements": [
-                "Developed and tested VAL software components for Volkswagen Infotainment's connectivity ECU, improving system efficiency by 15%.",
-                "Executed software V-cycle deliverables across multiple platforms, ensuring compliance with Automotive SPICE standards.",
-                "Implemented Agile/Scrum methodologies, enhancing team productivity by 20%."
-            ]
+            "description": "Developed and tested VAL software component for Volkswagen Infotainment, enhancing connectivity ECU performance. Executed software V-cycle and implemented Agile/Scrum methodologies. Utilized C++ 14, C, Python, Java, Jenkins, Docker, JIRA, Bitbucket, Git, and Microsoft Teams."
         },
         {
             "title": "Embedded Software Engineer",
             "company": "Alfa Electronics",
+            "location": "Cairo, Egypt",
             "dates": "June 2022 – July 2022",
-            "achievements": [
-                "Enhanced system efficiency and reliability for the Queueing System Project, reducing processing time by 10%."
-            ]
+            "description": "Enhanced system efficiency and reliability in the Queueing System Project."
         },
         {
             "title": "Project Engineer",
             "company": "FlowTex for HDD",
+            "location": "Cairo, Egypt",
             "dates": "March 2020 – September 2021",
-            "achievements": [
-                "Managed multiple HDD sites within government mega projects, ensuring on-time project delivery.",
-                "Led a successful soil freezing project at the metro tunnel, recognized as a major company achievement."
-            ]
+            "description": "Managed multiple HDD sites within government mega projects. Successfully executed a soil freezing project at the metro tunnel."
         },
         {
             "title": "Maintenance and Production Engineer",
             "company": "El Nemsawy for Plastic Industry",
+            "location": "Assiut, Egypt",
             "dates": "July 2019 – February 2021",
-            "achievements": [
-                "Optimized production plans, increasing productivity across three lines by 12%.",
-                "Improved daily maintenance operations, enhancing equipment uptime and worker safety."
-            ]
+            "description": "Oversaw maintenance operations, ensuring production efficiency and safety. Optimized production plans, increasing productivity across three lines."
         }
     ],
     "education": [
-        "Bachelor’s Degree in Mechatronics and Robotics Engineering, Assiut University (2016)",
-        "C++ Nanodegree, Udacity (May 2022 – September 2022)",
-        "Embedded Systems Diploma, National Telecommunication Institute (Oct 2021 – Mar 2022)"
+        {
+            "degree": "Bachelor’s Degree in Mechatronics and Robotics Engineering",
+            "school": "Faculty of Engineering, Assiut University",
+            "dates": "Class of 2016"
+        },
+        {
+            "degree": "C++ Nanodegree",
+            "school": "Udacity",
+            "dates": "May 2022 – September 2022"
+        },
+        {
+            "degree": "Embedded Systems Diploma",
+            "school": "National Telecommunication Institute, NTI",
+            "dates": "October 2021 – March 2022"
+        }
     ],
-    "skills": [
-        "Proficient in C/C++ and Python for software development and automation.",
-        "Strong knowledge of socket communication, multithreading, and IPC.",
-        "Experience with Google Protocol Buffers, Git, and real-time operating systems.",
-        "Familiar with AUTOSAR architecture, data structures, and algorithms."
+    "courses": [
+        "AUTOSAR Master Class, Sprints (May 2022 – October 2022)",
+        "Mastering 4 Critical Skills using C++ 17, Udemy (May 2022 – September 2022)",
+        "AUTOSAR Architecture Course, Udemy (May 2022)",
+        "AI and Data Science Introduction, Epsilon Institute (Online) (August 2020 – January 2021)",
+        "Embedded Systems Diploma, IMT School (November 2018 – March 2019)",
+        "Testing Essentials, TestPRO for Software Testing Services (December 2018)"
     ],
-    "certifications": [
-        "AUTOSAR Master Class (May 2022 – Oct 2022)",
-        "Mastering C++ 17 Critical Skills (May 2022 – Sep 2022)",
-        "AI and Data Science Introduction (Aug 2020 – Jan 2021)"
+    "technical_skills": [
+        "Programming Languages: C++, Python, Java",
+        "Development Tools: Jenkins, Docker, Git, JIRA, Bitbucket",
+        "Automotive Standards: AUTOSAR, Automotive SPICE",
+        "Communication Protocols: SPI, I2C, UART, CAN, LIN",
+        "Operating Systems: Linux, RTOS",
+        "Data Structures and Algorithms: Strong understanding for optimizing software performance",
+        "Multithreading: Practical implementation in C and C++",
+        "Inter-Process Communication (IPC): Fair practical experience",
+        "Microcontroller Interfacing: AVR and ARM Architecture, driver development"
     ],
     "projects": [
-        "System Monitor Project - Udacity C++ Nanodegree",
-        "IOT Smart Home Project - ARM Cortex M4",
-        "CNC Machine (Graduation Project) – Grade: A+"
+        "System Monitor Project - Udacity C++ Nanodegree: Improved system efficiency by 20% through optimized monitoring solutions.",
+        "Sterilization Gate Project (Atmel ATMEGA 32 – Free RTOS): Developed a reliable sterilization system.",
+        "IOT Smart Home Project (STM32F401RE based on ARM Cortex M4 Architecture): Implemented smart home features using IoT.",
+        "Mobile Controlled Home (Atmel ATMEGA32): Designed a mobile-controlled home automation system.",
+        "CNC Machine (Graduation Project) – Grade: A+: Developed a CNC machine with precision control."
     ],
-    "interests": [
-        "Volunteering as a Scout Leader, fostering leadership and teamwork.",
-        "Passionate about historical documentaries and technological advancements."
+    "hobbies": [
+        "Volunteer Scout Leader, enhancing leadership and teamwork skills.",
+        "Charity work, providing essential medical treatment to underserved communities.",
+        "Interest in historical and scientific documentaries.",
+        "Staying updated with advancements in engineering and technology."
     ]
 }
