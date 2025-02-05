@@ -5,13 +5,13 @@ import json
 
 # Standard section headers for ATS compatibility
 STANDARD_SECTIONS = {
-    'summary': 'PROFESSIONAL SUMMARY',
-    'experience': 'PROFESSIONAL EXPERIENCE',
-    'education': 'EDUCATION',
-    'skills': 'TECHNICAL SKILLS',
-    'courses': 'PROFESSIONAL DEVELOPMENT',
-    'projects': 'RELEVANT PROJECTS',
-    'hobbies': 'ADDITIONAL INFORMATION'
+    'summary': 'Professional Summary',
+    'experience': 'Professional Experience',
+    'education': 'Education',
+    'skills': 'Techincal Skills',
+    'courses': 'Certifications & Training',
+    'projects': 'Relevant Projects',
+    'hobbies': 'Additional Information'
 }
 
 def optimize_content_for_ats(content):

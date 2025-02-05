@@ -5,9 +5,7 @@
         "Phone": "+201501414343, +201114417099",
         "Email": "mina.hany.kameel.ryad@gmail.com",
         "LinkedIn": "https://www.linkedin.com/in/mina-hany-kameel/",
-        "Spoken Languages": "Arabic (native), English (full proficiency), German (basic)",
-        "Marital Status": "Single",
-        "Nationality": "Egyptian"
+        "Spoken Languages": "Arabic (native), English (full proficiency), German (basic)"
     },
     "summary": "Results-oriented C++ Software Engineer with extensive experience in embedded systems and automotive software engineering. Skilled in designing, developing, and testing software components for advanced automotive infotainment systems. Recognized for achieving high customer satisfaction in 2023.",
     "experience": [
@@ -16,7 +14,7 @@
             "company": "Swift-Act LLC",
             "location": "Cairo, Egypt",
             "dates": "July 2022 – Present",
-            "description": "Developed and tested VAL software component for Volkswagen Infotainment, enhancing connectivity ECU performance. Executed software V-cycle and implemented Agile/Scrum methodologies. Utilized C++ 14, C, Python, Java, Jenkins, Docker, JIRA, Bitbucket, Git, and Microsoft Teams."
+            "description": "Contributed in developing and testing the VAL software component for Volkswagen Infotainment, implementing new features and enhancing connectivity ECU performance. Executed software V-cycle and implemented Agile/Scrum methodologies. Utilized C++ 14, C, Python, Java, Jenkins, Docker, JIRA, Bitbucket, Git, and Microsoft Teams."
         },
         {
             "title": "Embedded Software Engineer",
