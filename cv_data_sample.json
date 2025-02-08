@@ -1,57 +1,39 @@
 {
-    "name": "Add your full name here",
+    "name": "Add Your Name",
     "personal_info": {
-        "Address": "Your Address",
-        "Phone": "Your Phone Number(s)",
-        "Email": "Your Email Address",
-        "LinkedIn": "[invalid URL removed]",
-        "Spoken Languages": "List your spoken languages and proficiency levels here",
-        "Marital Status": "Your Marital Status"
+        "Address": "Add Your Address",
+        "Phone": "Add Your Phone Number",
+        "Email": "Add Your Email",
+        "LinkedIn": "Add Your LinkedIn Profile",
+        "Spoken Languages": "Add Your Spoken Languages"
     },
-    "summary": "Write your professional summary here. Briefly highlight your skills and experience.",
+    "summary": "Add a brief professional summary about yourself.",
     "experience": [
         {
-            "title": "Job Title 1",
-            "company": "Company Name 1",
-            "location": "Location 1",
-            "dates": "Start Date 1 – End Date 1",
-            "description": "Write a description of your responsibilities and achievements in position 1."
-        },
-        {
-            "title": "Job Title 2",
-            "company": "Company Name 2",
-            "location": "Location 2",
-            "dates": "Start Date 2 – End Date 2",
-            "description": "Write a description of your responsibilities and achievements in position 2 (and so on for additional experiences)."
+            "title": "Add Your Job Title",
+            "company": "Add Company Name",
+            "location": "Add Company Location",
+            "dates": "Add Employment Dates",
+            "description": "Add a brief description of your responsibilities and achievements."
         }
     ],
     "education": [
         {
-            "degree": "Your Degree Name 1",
-            "school": "School Name 1",
-            "dates": "Graduation Year 1"
-        },
-        {
-            "degree": "Your Degree Name 2",
-            "school": "School Name 2",
-            "dates": "Graduation Year 2 (and so on for additional qualifications)"
+            "degree": "Add Your Degree",
+            "school": "Add Your School Name",
+            "dates": "Add Graduation Year"
         }
     ],
     "courses": [
-        "Course Title 1, Provider Name 1 (Completion Dates)",
-        "Course Title 2, Provider Name 2 (Completion Dates) (and so on for additional courses)"
+        "Add Relevant Courses You Have Taken"
     ],
     "technical_skills": [
-        "Technical Skill 1 - Proficiency Level",
-        "Technical Skill 2 - Proficiency Level (and so on for your technical skills)",
-        "Add or remove skills based on your experience."
+        "Add Your Technical Skills Here"
     ],
     "projects": [
-        "Project Name 1 - Brief Description (Technologies Used)",
-        "Project Name 2 - Brief Description (Technologies Used) (and so on for your projects)"
+        "Add Notable Projects You Have Worked On"
     ],
     "hobbies": [
-        "Your Hobby 1",
-        "Your Hobby 2 (and so on for your hobbies)"
+        "Add Your Hobbies or Interests"
     ]
 }

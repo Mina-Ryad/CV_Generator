@@ -3,175 +3,181 @@ from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT, WD_LINE_SPACING
 import json
 
+# Standard section headers for ATS compatibility
+STANDARD_SECTIONS = {
+    'summary': 'Professional Summary',
+    'experience': 'Professional Experience',
+    'education': 'Education',
+    'skills': 'Techincal Skills',
+    'courses': 'Certifications & Training',
+    'projects': 'Relevant Projects',
+    'hobbies': 'Additional Information'
+}
+
+def optimize_content_for_ats(content):
+    """Optimize content for ATS parsing by removing special characters and formatting."""
+    if isinstance(content, str):
+        content = content.replace('\u2022', '')  # Remove bullet points
+        content = content.replace('\n', ' ')  # Replace newlines with spaces
+        return ' '.join(content.split())  # Remove extra spaces
+    return content
+
 def add_heading(document, text, level=1):
-    # Add a heading to the document with the specified text and level.
+    """Add a heading with ATS-friendly formatting."""
     heading = document.add_heading(level=level)
-    run = heading.add_run(text)
+    run = heading.add_run(text.upper())
     run.bold = True
-    run.font.size = Pt(14)
-    # Reduce spacing in the paragraph
+    run.font.size = Pt(11)
     paragraph_format = heading.paragraph_format
-    paragraph_format.space_before = Pt(8)
-    paragraph_format.space_after = Pt(1)
+    paragraph_format.space_before = Pt(4)
+    paragraph_format.space_after = Pt(4)
+    return heading
 
 def add_name(document, name):
-    # Add the name to the document.
-    name_paragraph = document.add_paragraph(name)
+    """Add name section with standard formatting."""
+    name_paragraph = document.add_paragraph()
+    name_run = name_paragraph.add_run(name.upper())
+    name_run.bold = True
+    name_run.font.size = Pt(14)
     name_paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-    name_paragraph.style = 'Heading 1'
-    name_paragraph.style.font.size = Pt(24)
     reduce_spacing(name_paragraph)
 
 def add_personal_info(document, personal_info):
-    # Add personal information section to the document.
-    add_heading(document, 'Personal Information')
+    """Add contact information section with ATS-friendly formatting."""
+    add_heading(document, 'CONTACT INFORMATION')
     for key, value in personal_info.items():
-        key_paragraph = document.add_paragraph()
-        key_run = key_paragraph.add_run(key + ': ')
-        key_run.bold = True
-        key_paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
-        key_paragraph.paragraph_format.tab_stops.add_tab_stop(Pt(4000))
-        value_run = key_paragraph.add_run(value)
+        paragraph = document.add_paragraph()
+        run = paragraph.add_run(f"{key}: {value}")
         if key.lower() == 'linkedin':
-            value_run.font.color.rgb = RGBColor(0, 0, 255)  # Blue color
-            value_run.underline = True  # Underline style
-        reduce_spacing(key_paragraph)
+            run.font.color.rgb = RGBColor(0, 0, 255)
+            run.underline = True
+        reduce_spacing(paragraph)
 
-def add_section(document, title, dates, content, bullet=False, font_size=None):
-    # Add a section with the specified title, dates, and content to the document.
+def add_section(document, title, dates, content, bullet=False, font_size=10):
+    """Add a section with standardized formatting."""
     document.add_heading(title, level=2)
     if dates:
         paragraph = document.add_paragraph()
-        run = paragraph.add_run(f"{dates}")
+        run = paragraph.add_run(dates)
         run.italic = True
-        reduce_spacing(paragraph, space_after=Pt(3))
-    if bullet:
-        paragraphs = content.split('\n')
-        for para in paragraphs:
-            if para.strip():
-                p = document.add_paragraph(para, style='ListBullet')
-                if font_size:
-                    p.style.font.size = Pt(font_size)
+        reduce_spacing(paragraph)
+
+    content = optimize_content_for_ats(content)
+    if bullet and isinstance(content, str):
+        for point in content.split('. '):
+            if point.strip():
+                p = document.add_paragraph(style='List Bullet')
+                p.add_run(point.strip())
+                p.style.font.size = Pt(font_size)
                 reduce_spacing(p)
     else:
         paragraph = document.add_paragraph(content)
-        if font_size:
-            paragraph.style.font.size = Pt(font_size)
-        paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+        paragraph.style.font.size = Pt(font_size)
         reduce_spacing(paragraph)
 
 def add_summary(document, summary):
-    # Add a summary to the document.
-    add_heading(document, 'Summary')
-    summary_paragraph = document.add_paragraph(summary)
+    """Add professional summary section."""
+    add_heading(document, STANDARD_SECTIONS['summary'])
+    summary_paragraph = document.add_paragraph(optimize_content_for_ats(summary))
     summary_paragraph.style.font.size = Pt(10)
     reduce_spacing(summary_paragraph)
 
 def add_experience(document, experiences):
-    # Add experience sections to the document.
-    add_heading(document, 'Experience')
+    """Add professional experience section with ATS-optimized formatting."""
+    add_heading(document, STANDARD_SECTIONS['experience'])
     for exp in experiences:
-        exp_title = f"{exp['title']}, {exp['company']}"
+        exp_title = f"{exp['title']} - {exp['company']}"
+        if 'location' in exp:
+            exp_title += f" | {exp['location']}"
         exp_dates = exp['dates']
-        exp_details = exp['description']
-        add_section(document, exp_title, exp_dates, exp_details, bullet=True, font_size=10)
+        exp_details = optimize_content_for_ats(exp['description'])
+        add_section(document, exp_title, exp_dates, exp_details, bullet=True)
 
 def add_education(document, education):
-    # Add education sections to the document.
-    add_heading(document, 'Education')
+    """Add education section with standard formatting."""
+    add_heading(document, STANDARD_SECTIONS['education'])
     for edu in education:
-        degree = edu['degree']
-        school = edu['school']
-        dates = edu['dates']
-        # Create a new paragraph for each education entry
-        p = document.add_paragraph()
-        # Add bullet point
-        p.add_run("\u2022 ").bold = True
-        # Add degree in bold
-        p.add_run(f" {degree}").bold = True
-        # Add school
-        p.add_run(f", {school}")
-        # Add dates in italic without the comma
-        p.add_run(f" {dates}").italic = True
+        paragraph = document.add_paragraph()
+        paragraph.add_run(f"{edu['degree']} - {edu['school']}").bold = True
+        paragraph.add_run(f" ({edu['dates']})").italic = True
+        reduce_spacing(paragraph)
+
+def add_skills(document, skills, section_title='TECHNICAL SKILLS'):
+    """Add skills section with categorized formatting."""
+    add_heading(document, section_title)
+    for skill in skills:
+        paragraph = document.add_paragraph(style='List Bullet')
+        paragraph.add_run(optimize_content_for_ats(skill))
+        paragraph.style.font.size = Pt(10)
+        reduce_spacing(paragraph)
 
 def add_courses(document, courses):
-    # Add courses sections to the document.
-    add_heading(document, 'Courses')
+    """Add professional development section."""
+    add_heading(document, STANDARD_SECTIONS['courses'])
     for course in courses:
-        CoursesParagraph = document.add_paragraph(course, style='ListBullet')
-        CoursesParagraph.style.font.size = Pt(10)
-        reduce_spacing(CoursesParagraph)
-
-def add_technical_skills(document, skills):
-    # Add technical skills sections to the document.
-    add_heading(document, 'Technical Skills')
-    for skill in skills:
-        CoursesParagraph = document.add_paragraph(skill, style='ListBullet')
-        CoursesParagraph.style.font.size = Pt(10)
-        reduce_spacing(CoursesParagraph)
+        paragraph = document.add_paragraph(style='List Bullet')
+        paragraph.add_run(optimize_content_for_ats(course))
+        paragraph.style.font.size = Pt(10)
+        reduce_spacing(paragraph)
 
 def add_projects(document, projects):
-    # Add projects sections to the document.
-    add_heading(document, 'Projects')
+    """Add projects section."""
+    add_heading(document, STANDARD_SECTIONS['projects'])
     for project in projects:
-        ProjectsParagraph = document.add_paragraph(project, style='ListBullet')
-        ProjectsParagraph.style.font.size = Pt(10)
-        reduce_spacing(ProjectsParagraph)
+        paragraph = document.add_paragraph(style='List Bullet')
+        paragraph.add_run(optimize_content_for_ats(project))
+        paragraph.style.font.size = Pt(10)
+        reduce_spacing(paragraph)
 
-def add_hobbies(document, hobbies):
-    # Add hobbies and interests sections to the document.
-    add_heading(document, 'Hobbies and Interests')
-    for hobby in hobbies:
-        HobbiesParagraph = document.add_paragraph(hobby, style='ListBullet')
-        HobbiesParagraph.style.font.size = Pt(10)
-        reduce_spacing(HobbiesParagraph)
-
-def reduce_spacing(paragraph, line_spacing_rule=WD_LINE_SPACING.EXACTLY, line_spacing=Pt(12), space_after=Pt(0), space_before=Pt(1)):
-    # Reduce spacing in the paragraph.
+def reduce_spacing(paragraph, line_spacing=Pt(10)):
+    """Apply standard spacing to paragraphs."""
     paragraph_format = paragraph.paragraph_format
-    paragraph_format.line_spacing_rule = line_spacing_rule
+    paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
     paragraph_format.line_spacing = line_spacing
-    paragraph_format.space_after = space_after
-    paragraph_format.space_before = space_before
+    paragraph_format.space_after = Pt(2)
+    paragraph_format.space_before = Pt(2)
 
 def read_cv_data_from_json(file_path):
-    # Read CV data from a JSON file.
+    """Read CV data from JSON file."""
     with open(file_path, 'r', encoding='utf-8') as file:
-        cv_data = json.load(file)
-    return cv_data
+        return json.load(file)
 
 def generate_cv(data):
-    # Generate a DOCX version of a CV document based on the provided data.
+    """Generate ATS-compliant CV document."""
     document = Document()
+    
+    # Set standard document properties
+    style = document.styles['Normal']
+    style.font.name = 'Arial'
+    style.font.size = Pt(10)
 
-    # Increase the font size of main headers
-    document.styles['Heading 1'].font.size = Pt(16)
-    document.styles['Heading 2'].font.size = Pt(11)
-
-    # Decrease page borders
+    # Set narrow margins
     sections = document.sections
     for section in sections:
-        section.top_margin = Pt(50)
-        section.bottom_margin = Pt(50)
-        section.left_margin = Pt(50)
-        section.right_margin = Pt(50)
+        section.top_margin = Pt(36)  # 0.5 inch
+        section.bottom_margin = Pt(36)
+        section.left_margin = Pt(36)
+        section.right_margin = Pt(36)
 
-    # Add name at the top
+    # Add document sections
     add_name(document, data['name'])
-
     add_personal_info(document, data['personal_info'])
     add_summary(document, data['summary'])
     add_experience(document, data['experience'])
     add_education(document, data['education'])
+    add_skills(document, data['technical_skills'])
     add_courses(document, data['courses'])
-    add_technical_skills(document, data['technical_skills'])
     add_projects(document, data['projects'])
-    add_hobbies(document, data['hobbies'])
+    
+    if 'hobbies' in data:
+        add_skills(document, data['hobbies'], STANDARD_SECTIONS['hobbies'])
 
-    # Save the DOCX version
-    docx_file = 'Mina_Ryad_CV.docx'
-    document.save(docx_file)
+    # Save document with standardized filename
+    filename = f"{data['name'].replace(' ', '_')}_Resume.docx"
+    document.save(filename)
+    return filename
 
 if __name__ == "__main__":
     cv_data = read_cv_data_from_json("cv_data.json")
-    generate_cv(cv_data)
+    output_file = generate_cv(cv_data)
+    print(f"CV generated successfully: {output_file}")
