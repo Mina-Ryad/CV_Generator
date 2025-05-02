@@ -1,50 +1,56 @@
 {
-    "name": "[Your Full Name]",
-    "title": "[Your Professional Title]",
-    "contact": {
-        "location": "[City, Country]",
-        "phone": "[+CountryCode Phone Number]",
-        "email": "[your.email@domain.com]",
-        "linkedin": "[LinkedIn Profile URL]",
-        "languages": "[Language 1 (Proficiency), Language 2 (Proficiency)]"
+    "header": {
+        "name": "[Your Full Name]",
+        "title": "[Professional Title] | [Specialization]",
+        "contact": {
+            "location": "[City, Country]",
+            "phone": "[+CountryCode Phone Number]",
+            "email": "[your.email@domain.com]",
+            "linkedin": "[LinkedIn Profile URL]",
+            "languages": "[Language 1 (Proficiency), Language 2 (Proficiency)]"
+        }
     },
     "sections": {
-        "summary": {
-            "content": "[Write a 2-3 line professional summary highlighting your expertise.]"
-        },
+        "summary": "[2-3 sentence professional summary highlighting key qualifications]",
+
         "experience": [
             {
-                "company": "[Company Name]",
-                "location": "[City, Country]",
+                "company": "[Company Name] | [City, Country]",
                 "position": "[Job Title]",
                 "dates": "[Start Month Year – End Month Year]",
-                "highlights": [
-                    "[Bullet point 1]",
-                    "[Bullet point 2]"
+                "details": [
+                    "[Achievement 1 with impact/result]",
+                    "[Achievement 2 with technical details]"
                 ]
             }
         ],
+
         "education": [
             {
-                "institution": "[University/Institution Name]",
                 "degree": "[Degree/Certification Name]",
-                "dates": "[Completion Date]",
-                "note": "[Optional: Academic projects or honors]"
+                "institution": "[University/Institution]",
+                "dates": "[Completion Date/Range]"
             }
         ],
-        "technical_skills": [
-            "[Category: Skill 1 | Skill 2 | Skill 3]"
+
+        "skills": [
+            "Programming Languages: [Language 1 | Language 2 | Language 3]",
+            "Frameworks: [Framework 1 | Framework 2]",
+            "Tools: [Tool 1 | Tool 2 | Tool 3]"
         ],
+
         "certifications": [
-            "[Certification Name, Issuer (Date)]"
+            "[Certification Name] - [Issuer] ([Date])"
         ],
+
         "projects": [
-            "[Project Name]: [Brief description]"
+            "[Project Name] - [Technologies Used]: [Brief description of contribution/outcome]"
         ],
-        "additional": {
-            "items": [
-                "[Volunteer work, awards, or interests]"
-            ]
-        }
+
+        "additional": [
+            "[Volunteer Work/Leadership/Awards]",
+            "[Publications/Professional Memberships]",
+            "[Languages/Interests]"
+        ]
     }
 }
