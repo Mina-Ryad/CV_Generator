@@ -1,39 +1,50 @@
 {
-    "name": "Add Your Name",
-    "personal_info": {
-        "Address": "Add Your Address",
-        "Phone": "Add Your Phone Number",
-        "Email": "Add Your Email",
-        "LinkedIn": "Add Your LinkedIn Profile",
-        "Spoken Languages": "Add Your Spoken Languages"
+    "name": "[Your Full Name]",
+    "title": "[Your Professional Title]",
+    "contact": {
+        "location": "[City, Country]",
+        "phone": "[+CountryCode Phone Number]",
+        "email": "[your.email@domain.com]",
+        "linkedin": "[LinkedIn Profile URL]",
+        "languages": "[Language 1 (Proficiency), Language 2 (Proficiency)]"
     },
-    "summary": "Add a brief professional summary about yourself.",
-    "experience": [
-        {
-            "title": "Add Your Job Title",
-            "company": "Add Company Name",
-            "location": "Add Company Location",
-            "dates": "Add Employment Dates",
-            "description": "Add a brief description of your responsibilities and achievements."
+    "sections": {
+        "summary": {
+            "content": "[Write a 2-3 line professional summary highlighting your expertise.]"
+        },
+        "experience": [
+            {
+                "company": "[Company Name]",
+                "location": "[City, Country]",
+                "position": "[Job Title]",
+                "dates": "[Start Month Year – End Month Year]",
+                "highlights": [
+                    "[Bullet point 1]",
+                    "[Bullet point 2]"
+                ]
+            }
+        ],
+        "education": [
+            {
+                "institution": "[University/Institution Name]",
+                "degree": "[Degree/Certification Name]",
+                "dates": "[Completion Date]",
+                "note": "[Optional: Academic projects or honors]"
+            }
+        ],
+        "technical_skills": [
+            "[Category: Skill 1 | Skill 2 | Skill 3]"
+        ],
+        "certifications": [
+            "[Certification Name, Issuer (Date)]"
+        ],
+        "projects": [
+            "[Project Name]: [Brief description]"
+        ],
+        "additional": {
+            "items": [
+                "[Volunteer work, awards, or interests]"
+            ]
         }
-    ],
-    "education": [
-        {
-            "degree": "Add Your Degree",
-            "school": "Add Your School Name",
-            "dates": "Add Graduation Year"
-        }
-    ],
-    "courses": [
-        "Add Relevant Courses You Have Taken"
-    ],
-    "technical_skills": [
-        "Add Your Technical Skills Here"
-    ],
-    "projects": [
-        "Add Notable Projects You Have Worked On"
-    ],
-    "hobbies": [
-        "Add Your Hobbies or Interests"
-    ]
+    }
 }
